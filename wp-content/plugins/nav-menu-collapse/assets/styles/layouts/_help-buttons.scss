@@ -1,0 +1,40 @@
+.nmc-help-button.dashicons
+{
+	@include transition([color, opacity]);
+
+	display: none;
+	overflow: hidden;
+	vertical-align: text-top;
+	opacity: 0;
+
+	&:focus
+	{
+		@include box-shadow(none);
+	}
+}
+
+.nmc-meta-box .nmc-help-button.dashicons
+{
+	margin-top: 1px;
+	margin-bottom: -1px;
+	font-size: 20px;
+	vertical-align: top;
+}
+
+body.rtl
+{
+	.nmc-help-button.dashicons::before
+	{
+		float: right;
+	}
+	
+	.nmc-meta-box,
+	.help-tab-content
+	{
+		.nmc-help-button.dashicons
+		{
+			margin-top: -1px;
+			margin-bottom: 1px;
+		}
+	}
+}

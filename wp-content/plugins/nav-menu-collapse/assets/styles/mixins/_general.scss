@@ -1,0 +1,72 @@
+@mixin border-box()
+{
+	@include box-sizing(border-box);
+}
+
+@mixin box-shadow($x, $y: 0, $blur: 0, $color: rgba(black, .25), $inset: false)
+{
+	@if ($x == none)
+	{
+		-webkit-box-shadow: $x;
+		box-shadow: $x;
+	}
+	@elseif ($inset)
+	{
+		-webkit-box-shadow: inset $x $y $blur 0 $color;
+		box-shadow: inset $x $y $blur 0 $color;
+	}
+	@else
+	{
+		-webkit-box-shadow: $x $y $blur 0 $color;
+		box-shadow: $x $y $blur 0 $color;
+	}
+}
+
+@mixin box-sizing($box-sizing)
+{
+	-moz-box-sizing: $box-sizing;
+	-webkit-box-sizing: $box-sizing;
+	box-sizing: $box-sizing;
+}
+
+@mixin transition($properties, $speed: 125ms, $easing: ease-in-out)
+{
+	$transition-list: ();
+	
+	@if ($properties == none)
+	{
+		$transition-list: none !important;
+	}
+	@else
+	{
+		@each $transition in to-array($properties)
+		{
+			@if (type-of($transition) == list)
+			{
+				$nested: to-array($transition);
+				
+				@if (length($nested) == 1)
+				{
+					$nested: append($nested, $speed, space);
+				}
+				
+				@if (length($nested) == 2)
+				{
+					$nested: append($nested, $easing, space);
+				}
+				
+				$transition-list: append($transition-list, $nested);
+			}
+			@else
+			{
+				$transition-list: append($transition-list, $transition $speed $easing, comma);
+			}
+		}
+	}
+	
+	-moz-transition: $transition-list;
+	-ms-transition: $transition-list;
+	-o-transition: $transition-list;
+	-webkit-transition: $transition-list;
+	transition: $transition-list;
+}

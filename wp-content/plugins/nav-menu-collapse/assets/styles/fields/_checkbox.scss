@@ -1,0 +1,36 @@
+.nmc-field-checkbox
+{
+	input[type='checkbox']
+	{
+		margin-top: 4px;
+		float: left;
+		
+		@include bp(up-to-tall-admin-bar)
+		{
+			margin-top: 0;
+		}
+	}
+
+	.nmc-description
+	{
+		padding-top: 3px;
+		padding-bottom: 3px;
+		display: block;
+	}
+	
+	&.nmc-confirmation
+	{
+		color: $color-red;
+		font-weight: 600;
+		
+		.nmc-description
+		{
+			color: $color-red;
+		}
+	}
+}
+
+body.rtl .nmc-field-checkbox input[type='checkbox']
+{
+	float: right;
+}

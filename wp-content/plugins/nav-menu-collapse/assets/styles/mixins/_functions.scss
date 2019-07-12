@@ -1,0 +1,11 @@
+@function to-array($value)
+{
+	@if (type-of($value) == list)
+	{
+		@return $value;
+	}
+	@else
+	{
+		@return append((), $value);
+	}
+}

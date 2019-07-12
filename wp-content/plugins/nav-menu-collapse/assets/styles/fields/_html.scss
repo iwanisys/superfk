@@ -1,0 +1,40 @@
+.nmc-field-html
+{
+	a
+	{
+		@include transition(color);
+		
+		img
+		{
+			@include transition(opacity);
+		}
+		
+		&:hover img
+		{
+			opacity: 0.875;
+		}
+	}
+	
+	p
+	{
+		margin-top: 0;
+
+		&:last-child
+		{
+			margin-bottom: 0;
+		}
+	}
+
+	img
+	{
+		margin-top: 6px;
+		height: auto;
+		max-width: 100%;
+
+		&.robert-noakes
+		{
+			width: 100%;
+			max-width: 257px;
+		}
+	}
+}

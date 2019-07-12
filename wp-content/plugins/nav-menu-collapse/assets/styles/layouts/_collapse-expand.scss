@@ -1,0 +1,145 @@
+.is-submenu
+{
+	display: inline-block;
+}
+
+.nmc-collapse,
+.nmc-expand
+{
+	display: inline-block;
+	overflow: hidden;
+	height: auto;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 18px;
+	font-family: $font-monospace;
+	text-align: center;
+	vertical-align: text-top;
+}
+
+.menu-item.nmc-hidden
+{
+	display: none !important;
+}
+
+.nmc-collapse-expand-all
+{
+	margin-left: -0.125rem;
+	outline: 0;
+	display: none;
+	overflow: hidden;
+
+	.button
+	{
+		margin: 0.125rem;
+
+		span
+		{
+			margin-top: -2px;
+		}
+	}
+
+	.nmc-help-button
+	{
+		margin: 5px 0;
+	}
+}
+
+.nmc-collapse-expand
+{
+	@include transition(color);
+
+	position: absolute;
+	top: 0;
+	right: -40px;
+	display: none;
+	height: 40px;
+	width: 30px;
+	color: $color-gray;
+
+	&:hover
+	{
+		color: $color-dark-gray;
+	}
+}
+
+.nmc-collapsible
+{
+	.nmc-counter
+	{
+		margin-left: 4px;
+		display: inline-block;
+		color: $color-gray;
+		font-weight: normal;
+		text-decoration: none;
+	}
+	
+	.item-controls
+	{
+		right: 40px;
+	}
+
+	> .menu-item-bar .nmc-collapse-expand
+	{
+		display: block;
+		overflow: hidden;
+
+		span
+		{
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			width: 30px;
+			line-height: 40px;
+		}
+
+		.nmc-expand
+		{
+			display: none;
+		}
+	}
+}
+
+.nmc-collapsed > .menu-item-bar .nmc-collapse-expand
+{
+	.nmc-collapse
+	{
+		display: none;
+	}
+
+	.nmc-expand
+	{
+		display: block;
+	}
+}
+
+body.rtl
+{
+	.nmc-collapse-expand-all
+	{
+		margin-right: -0.125rem;
+		margin-left: 0;
+	}
+	
+	.nmc-collapse-expand
+	{
+		right: auto;
+		left: -40px;
+	}
+	
+	.nmc-collapsible
+	{
+		.nmc-counter
+		{
+			margin-right: 4px;
+			margin-left: 0;
+		}
+		
+		.item-controls
+		{
+			right: auto;
+			left: 40px;
+		}
+	}
+}

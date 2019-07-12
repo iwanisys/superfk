@@ -1,0 +1,78 @@
+$reduced-left-bar: 960px;
+$tall-admin-bar: 782px;
+$absolute-admin-bar: 600px;
+
+@mixin bp($size)
+{
+	@if ($size == above-reduced-left-bar)
+	{
+		@media (min-width: $reduced-left-bar + 1)
+		{
+			@content;
+		}
+	}
+
+	@if ($size == up-to-reduced-left-bar)
+	{
+		@media (max-width: $reduced-left-bar)
+		{
+			@content;
+		}
+	}
+
+	@if ($size == above-tall-admin-bar)
+	{
+		@media (min-width: $tall-admin-bar + 1)
+		{
+			@content;
+		}
+	}
+
+	@if ($size == up-to-tall-admin-bar)
+	{
+		@media (max-width: $tall-admin-bar)
+		{
+			@content;
+		}
+	}
+
+	@if ($size == above-absolute-admin-bar)
+	{
+		@media (min-width: $absolute-admin-bar + 1)
+		{
+			@content;
+		}
+	}
+
+	@if ($size == up-to-absolute-admin-bar)
+	{
+		@media (max-width: $absolute-admin-bar)
+		{
+			@content;
+		}
+	}
+
+	@if ($size == tall-admin-bar-to-reduced-left-bar)
+	{
+		@media (min-width: $tall-admin-bar + 1) and (max-width: $reduced-left-bar)
+		{
+			@content;
+		}
+	}
+
+	@if ($size == absolute-admin-bar-to-reduced-left-bar)
+	{
+		@media (min-width: $absolute-admin-bar + 1) and (max-width: $reduced-left-bar)
+		{
+			@content;
+		}
+	}
+
+	@if ($size == absolute-admin-bar-to-tall-admin-bar)
+	{
+		@media (min-width: $absolute-admin-bar + 1) and (max-width: $tall-admin-bar)
+		{
+			@content;
+		}
+	}
+}

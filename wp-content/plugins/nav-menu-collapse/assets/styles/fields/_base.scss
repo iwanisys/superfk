@@ -1,0 +1,90 @@
+.nmc-field
+{
+	@include border-box();
+	@include transition(background);
+
+	overflow: hidden;
+	background: $color-white;
+
+	&:nth-child(odd)
+	{
+		background: $color-light-gray;
+	}
+
+	label
+	{
+		display: block;
+	}
+}
+
+.nmc-field-label,
+.nmc-field-input
+{
+	@include border-box();
+
+	overflow: hidden;
+}
+
+.nmc-meta-box > div > .nmc-field
+{
+	> .nmc-field-label,
+	> .nmc-field-input
+	{
+		padding: 12px;
+	}
+}
+
+#advanced-sortables,
+#normal-sortables
+{
+	.nmc-meta-box > div > .nmc-field > .nmc-field-label
+	{
+		@include bp(above-tall-admin-bar)
+		{
+			float: left;
+			width: 25%;
+			max-width: 240px;
+
+			> label
+			{
+				margin-top: 3px;
+			}
+		}
+
+		@include bp(up-to-tall-admin-bar)
+		{
+			margin-bottom: -8px;
+			padding-bottom: 0;
+		}
+	}
+}
+
+@include bp(above-tall-admin-bar)
+{
+	#side-sortables .nmc-meta-box > div > .nmc-field > .nmc-field-label
+	{
+		margin-bottom: -8px;
+		padding-bottom: 0;
+	}
+}
+
+.nmc-description
+{
+	color: $color-wp-gray;
+	font-style: italic;
+}
+
+@include bp(above-tall-admin-bar)
+{
+	body.rtl
+	{
+		#advanced-sortables,
+		#normal-sortables
+		{
+			.nmc-meta-box > div > .nmc-field > .nmc-field-label
+			{
+				float: right;
+			}
+		}
+	}
+}

@@ -1,0 +1,13 @@
+#poststuff .nmc-meta-box
+{
+	.inside
+	{
+		margin: 0;
+		padding: 0;
+	}
+
+	:focus
+	{
+		@include box-shadow(none);
+	}
+}
